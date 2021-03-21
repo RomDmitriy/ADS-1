@@ -11,11 +11,11 @@ int cbinsearch(int* arr, int size, int value) {
 		value < arr[mid] ? max = mid - 1 : min = mid + 1;
 	}
 	int l = 1;
-	std::pair <bool, bool> whyNotxD = { std::make_pair(true, true) };
+	bool bo1 = true, bo2 = true;
 	if (count) {
-		while (whyNotxD.first || whyNotxD.second) {
-			if (mid + l < size) arr[mid + l] == value ? count++ : whyNotxD.first = false;
-			if (mid - l >= 0) arr[mid - l] == value ? count++ : whyNotxD.second = false;
+		while (bo1 || bo2) {
+			if (mid + l < size) arr[mid + l] == value ? count++ : bo1 = false;
+			if (mid - l >= 0) arr[mid - l] == value ? count++ : bo2 = false;
 			l++;
 		}
 	}
